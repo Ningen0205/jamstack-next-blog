@@ -11,15 +11,27 @@ import { GetContentListResponse } from '../types'
 const Home: NextPage<GetContentListResponse> = ({ contents }) => {
   return(
     <div>
-      <ul>
-        {contents.map(content=> (
-          <li key={content.id}>
+      {contents.map(content=> (
+          <div className="m-5 max-w-sm rounded overflow-hidden shadow-lg" key={`${content.id}`}>
             <Link href={`/blog/${content.id}`}>
-              <a>{content.title}</a>
+              <a>
+                <img className="w-full" src={`${content.eyecatch.url}`} alt="blog article eyecache image"/>
+                <div className="px-6 py-4">
+                  <p className="text-gray-700 text-base">
+                    { content.title }
+                  </p>
+                </div>
+              </a>
             </Link>
-          </li>
-        ))}
-      </ul>
+            <div className="px-6 pt-4 pb-2">
+              <Link href="#">
+                <a>
+                  <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#{content.category.name}</span>
+                </a>
+              </Link>
+            </div>
+          </div>
+      ))}
     </div>
   )
 }
