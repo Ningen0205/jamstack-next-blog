@@ -1,9 +1,8 @@
-import { GetStaticProps, NextPage, GetStaticPropsContext } from "next";
-import { ParsedUrlQuery } from "querystring";
+import { NextPage, GetStaticPropsContext } from "next";
 import { client } from "../../lib/cmsClient";
-import { GetContentDetailResponse, GetContentListResponse } from "../../types";
+import { Content, GetContentDetailResponse, GetContentListResponse } from "../../types";
 
-const detail: NextPage<GetContentDetailResponse> = ({ content }) => {
+const detail: NextPage<{content: Content}> = ({ content }) => {
     return(
         <main>
             <h1>{ content.title }</h1>
@@ -25,7 +24,7 @@ export const getStaticPaths = async() => {
 
 export const getStaticProps = async({ params }: GetStaticPropsContext<{ id: string }>) => {
     const id = params?.id;
-    const data = await client.get<Content>({ endpoint: "blogs", contentId: id})
+    const data = await client.get<GetContentDetailResponse>({ endpoint: "blogs", contentId: id})
 
     return {
         props: {
@@ -33,6 +32,5 @@ export const getStaticProps = async({ params }: GetStaticPropsContext<{ id: stri
         }
     }
 }
-
 
 export default detail;
