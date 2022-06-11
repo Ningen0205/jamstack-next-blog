@@ -24,7 +24,7 @@ export interface Content {
   revisedAt: string;
   title: string;
   body: string;
-  eyecatch: Eyecatch;
+  eyecatch: Eyecatch | null;
   category: Category;
 }
 
