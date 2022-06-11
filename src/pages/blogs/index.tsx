@@ -11,7 +11,7 @@ const Home: NextPage<GetContentListResponse> = ({ contents }) => {
   return (
     <div>
       {contents.map((content) => (
-        <ContentCard content={content} />
+        <ContentCard key={content.id} content={content} />
       ))}
     </div>
   );

@@ -1,10 +1,6 @@
 import { NextPage, GetStaticPropsContext } from "next";
 import { client } from "../../lib/cmsClient";
-import {
-  Content,
-  GetContentDetailResponse,
-  GetContentListResponse,
-} from "../../types";
+import { Content, GetContentDetailResponse, GetContentListResponse } from "../../types";
 
 const Detail: NextPage<{ content: Content }> = ({ content }) => {
   return (
@@ -25,9 +21,7 @@ export const getStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
-export const getStaticProps = async ({
-  params,
-}: GetStaticPropsContext<{ id: string }>) => {
+export const getStaticProps = async ({ params }: GetStaticPropsContext<{ id: string }>) => {
   const id = params?.id;
   const data = await client.get<GetContentDetailResponse>({
     endpoint: "blogs",
