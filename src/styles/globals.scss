@@ -25,33 +25,43 @@ a {
 #content {
   h1 {
     font-size: 3rem;
+    margin: 1.5rem auto;
   }
 
   h2 {
     font-size: 2.5rem;
+    margin: 1.25rem auto;
   }
 
   h3 {
     font-size: 2rem;
+    margin: 1rem auto;
   }
 
   h4 {
     font-size: 1.75rem;
+    margin: 0.8rem auto;
   }
 
   h5 {
     font-size: 1.5rem;
+    margin: 0.75rem auto;
   }
 
   h6 {
     font-size: 1.25rem;
+    margin: 0.5rem auto;
   }
 
   p {
-    margin: 2px;
+    margin: 0.25rem;
   }
 
   code {
-    margin: 10px auto;
+    margin: 0.5rem auto;
+  }
+
+  img {
+    margin: 0.5rem auto;
   }
 }
