@@ -10,6 +10,8 @@
     "lint:fix": "eslint src --ext .js,.jsx,.ts,.tsx --fix && prettier --write src/"
   },
   "dependencies": {
+    "cheerio": "^1.0.0-rc.11",
+    "highlight.js": "^11.5.1",
     "microcms-js-sdk": "^2.0.0",
     "next": "12.1.6",
     "react": "18.1.0",
