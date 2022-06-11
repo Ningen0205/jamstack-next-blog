@@ -13,7 +13,7 @@ const Home: NextPage<GetContentListResponse> = ({ contents }) => {
     <div>
       {contents.map(content=> (
           <div className="m-5 max-w-sm rounded overflow-hidden shadow-lg" key={`${content.id}`}>
-            <Link href={`/blog/${content.id}`}>
+            <Link href={`/blogs/${content.id}`}>
               <a>
                 <img className="w-full" src={`${content.eyecatch.url}`} alt="blog article eyecache image"/>
                 <div className="px-6 py-4">

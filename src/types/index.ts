@@ -1,6 +1,12 @@
-
 export interface GetContentListResponse {
   contents: Content[];
+  totalCount: number;
+  offset: number;
+  limit: number;
+}
+
+export interface GetCategoryListResponse {
+  contents: Category[];
   totalCount: number;
   offset: number;
   limit: number;
