@@ -6,7 +6,7 @@ import { Content, GetContentDetailResponse, GetContentListResponse } from "../..
 
 const Detail: NextPage<Content> = (content) => {
   return (
-    <main>
+    <main id="content">
       <h1>{content.title}</h1>
       <p>{content.publishedAt}</p>
       <div dangerouslySetInnerHTML={{ __html: `${content.body}` }} />
@@ -35,6 +35,7 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext<{ id: str
     const highlightResult = hljs.highlightAuto($(elm).text());
     $(elm).html(highlightResult.value);
     $(elm).addClass("hljs");
+    $(elm).addClass("rounded");
   });
 
   return {
