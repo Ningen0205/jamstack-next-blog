@@ -4,10 +4,7 @@ import { Content } from "../types";
 
 const ContentCard = ({ content }: { content: Content }) => {
   return (
-    <div
-      className="m-5 max-w-sm rounded overflow-hidden shadow-lg"
-      key={`${content.id}`}
-    >
+    <div className="m-5 max-w-sm rounded overflow-hidden shadow-lg" key={`${content.id}`}>
       <Link href={`/blogs/${content.id}`}>
         <a>
           <img
